@@ -1,1 +1,1 @@
-web: cd client && npm install && npm run build && cd.. && python manage.py migrate && python manage.py collectstatic && gunicorn arqDev_api.wsgi
+web: cd client && npm install && npm run build && cd .. && python manage.py migrate && python manage.py collectstatic && gunicorn arqDev_api.wsgi
