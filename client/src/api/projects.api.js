@@ -1,8 +1,13 @@
 import axios from 'axios'
 
-export const getAllProjects = () => {
-    return axios.get('http://localhost:4000/projects/api/v1/projects/')
-}
-export const getProject = (id) => {
-    return axios.get(`http://localhost:4000/projects/api/v1/projects/${id}`)
-}
+const URL = process.env.NODE_ENV === "production" 
+? import.meta.env.VITE_BACKEND_URL 
+: "http://localhost:4000";
+
+const projectsApi = axios.create({
+    baseURL: `${URL}/projects/api/v1/projects/`
+});
+
+export const getAllProjects = () => projectsApi.get("/")
+
+export const getProject = (id) => projectsApi.get(`/${id}`)
