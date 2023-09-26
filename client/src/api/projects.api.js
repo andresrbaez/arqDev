@@ -1,8 +1,9 @@
 import axios from 'axios'
 
-const URL = process.env.NODE_ENV === "production" 
-? import.meta.env.VITE_BACKEND_URL 
-: "http://localhost:4000";
+// const URL = process.env.NODE_ENV === "production" 
+// ? import.meta.env.VITE_BACKEND_URL 
+// : "http://localhost:4000";
+let URL = "https://jfbmapi.onrender.com"
 
 const projectsApi = axios.create({
     baseURL: `${URL}/projects/api/v1/projects/`
