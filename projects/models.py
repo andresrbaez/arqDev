@@ -22,7 +22,7 @@ class Project(models.Model):
     description_3 = models.TextField(null=True, blank=True)
     description_4 = models.TextField(null=True, blank=True)
     description_5 = models.JSONField(default=dict, null=True, blank=True)
-    description_6 = models.JSONField(default=dict, null=True, blank=True)
+    description_6 = models.JSONField(default=dict, null=False, blank=True)
     
     
     
