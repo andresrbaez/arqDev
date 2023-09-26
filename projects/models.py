@@ -26,7 +26,8 @@ class Project(models.Model):
     
     
     
-    media = ImageField(upload_to="projects/images/", null=True)
+    media = models.JSONField(default=dict, null=True, blank=True)
+    # media = ImageField(upload_to="projects/images/", null=True)
     
     def __str__(self):
         return self.title
